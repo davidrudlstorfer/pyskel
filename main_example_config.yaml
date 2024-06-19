@@ -1,0 +1,4 @@
+general_config:
+  output_directory: output
+  log_file: pyskel.log
+  log_to_console: true

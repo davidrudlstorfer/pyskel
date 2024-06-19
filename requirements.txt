@@ -1,0 +1,8 @@
+isort
+munch
+numpy
+pdoc3
+pre-commit
+pyfiglet
+pytest-cov
+pyyaml

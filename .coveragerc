@@ -1,0 +1,5 @@
+[run]
+omit =
+    tests/*
+    setup.py
+relative_files = true

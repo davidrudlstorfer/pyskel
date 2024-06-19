@@ -1,0 +1,71 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
+    hooks:
+      - id: check-added-large-files
+        args: [— maxkb=1000]
+      - id: check-ast
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-xml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: debug-statements
+      - id: no-commit-to-branch # prevent commiting to main/master
+      - id: trailing-whitespace
+      - id: requirements-txt-fixer
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.3
+    hooks:
+      - id: bandit
+        args: ["-c", "pyproject.toml", "-r", "-ll", "."]
+        additional_dependencies: ["bandit[toml]"]
+  - repo: https://github.com/psf/black
+    rev: 24.4.2
+    hooks:
+      - id: black
+        language_version: python3.12
+  - repo: https://github.com/PyCQA/docformatter
+    rev: v1.7.1
+    hooks:
+      - id: docformatter
+        args: ["--in-place", "--config=./pyproject.toml", "-r"]
+  - repo: https://github.com/kplaube/pre-commit-dodgy
+    rev: 0.0.2
+    hooks:
+      - id: dodgy
+  - repo: https://github.com/pycqa/flake8
+    rev: 3.7.9
+    hooks:
+      - id: flake8
+  - repo: https://github.com/econchick/interrogate
+    rev: 1.7.0
+    hooks:
+      - id: interrogate
+        args: [--fail-under=100, --ignore-init-module, -vv, pyskel, utilities, tests, main.py]
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
+        args: ["--profile", "black", "--line-length", "79", "--filter-files"]
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.10.0
+    hooks:
+      - id: mypy
+        args: ["--install-types", "--non-interactive", "--ignore-missing-imports"]
+  - repo: https://github.com/asmeurer/removestar
+    rev: "1.5"
+    hooks:
+      - id: removestar
+  - repo: https://github.com/pamoller/xmlformatter
+    rev: v0.2.6
+    hooks:
+      - id: xml-formatter
+        args: [--indent, "2", --indent-char, " ", --selfclose, --overwrite]
+  - repo: https://github.com/google/yamlfmt
+    rev: v0.12.1
+    hooks:
+      - id: yamlfmt

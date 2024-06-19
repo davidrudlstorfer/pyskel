@@ -1,0 +1,85 @@
+<h1 align="center">
+  PySkel 🐍🩻
+</h1>
+
+<div align="center">
+
+[![Pipeline](https://github.com/davidrudlstorfer/pyskel/actions/workflows/main_pipeline.yml/badge.svg)](https://github.com/davidrudlstorfer/pyskel/actions/workflows/main_pipeline.yml)
+[![Documentation](https://github.com/davidrudlstorfer/pyskel/actions/workflows/main_documentation.yml/badge.svg)](https://davidrudlstorfer.github.io/pyskel/)
+[![Coverage badge](https://github.com/davidrudlstorfer/pyskel/raw/python-coverage-comment-action-data/badge.svg)](https://github.com/davidrudlstorfer/pyskel/tree/python-coverage-comment-action-data)
+
+</div>
+
+PySkel is a quick-start Python repository to act as a skeleton for various projects which includes the following amenities:
+
+- Testing framework [PyTest](https://docs.pytest.org/) including an enforced minimum coverage check
+- Automated [Github CI/CD](https://resources.github.com/devops/ci-cd/)
+- Exhaustive [Pre-Commit](https://pre-commit.com) framework to automatically check code formatting and code quality
+- Automatically generated [Documentation](https://pdoc.dev) based on the included Python docstrings
+- Pre-defined framework to gather global settings (see [`main_example_config.yaml`](./main_example_config.yaml)) and execute a specific workflow
+- Adjusted global logger with optional output to the commandline and/or log file
+
+## Installation
+
+For a quick and easy start an Anaconda/Miniconda environment is highly recommended. Other ways to install PySkel are possible but here the installation procedure is explained based on a conda install. After installing Anaconda/Miniconda
+execute the following steps:
+
+- Create a new Anaconda environment using Python 3.12:
+```
+conda create -n pyskel python=3.12
+```
+
+- Activate your newly created environment:
+```
+conda activate pyskel
+```
+- All necessary third party libraries can be installed using:
+```
+pip install .
+```
+- Finally, install the pre-commit hook with:
+```
+pre-commit install
+```
+
+Now you are up and running 🎉
+
+## Execution
+
+To execute PySkel either run
+
+```
+python main.py
+````
+
+to execute PySkel with the provided exemplary config or use
+
+```
+python main.py --config_file_path ../path/to/config.yaml
+````
+
+to utilize your own externally provided config file. Therein, all necessary configurations can be found.
+
+### Run testing framework and create coverage report
+
+To locally execute the tests and create the html coverage report simply run
+
+```
+pytest
+```
+
+### Create documentation
+
+To locally create the documentation from the provided docstrings simply run
+
+```
+pdoc --html --output-dir docs .
+```
+
+## Contributing
+
+All contributions are welcome. See [`CONTRIBUTING.md`](./CONTRIBUTING.md) for more information.
+
+## License
+
+This project is licensed under a MIT license. For further information check [`LICENSE.md`](./LICENSE.md).
