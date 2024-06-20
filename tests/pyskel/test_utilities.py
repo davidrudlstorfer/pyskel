@@ -11,11 +11,11 @@ def test_run_manager_init_run():
     mock_config = MagicMock()
 
     # Mock setup_logging, log_full_width, and logging.getLogger
-    with patch("pyskel.utilities.setup_logging") as mock_setup_logging, patch(
-        "pyskel.utilities.log_full_width"
-    ) as mock_log_full_width, patch(
-        "pyskel.utilities.print_header"
-    ) as mock_print_header:
+    with (
+        patch("pyskel.utilities.setup_logging") as mock_setup_logging,
+        patch("pyskel.utilities.log_full_width") as mock_log_full_width,
+        patch("pyskel.utilities.print_header") as mock_print_header,
+    ):
         # Create an instance of RunManager
         run_manager = RunManager(mock_config)
 
@@ -34,9 +34,10 @@ def test_run_manager_finish_run():
     mock_config = MagicMock()
 
     # Mock log_full_width, logging handlers, and logging.getLogger
-    with patch(
-        "pyskel.utilities.log_full_width"
-    ) as mock_log_full_width, patch("pyskel.utilities.log") as mock_log:
+    with (
+        patch("pyskel.utilities.log_full_width") as mock_log_full_width,
+        patch("pyskel.utilities.log") as mock_log,
+    ):
 
         # Create an instance of RunManager
         run_manager = RunManager(mock_config)

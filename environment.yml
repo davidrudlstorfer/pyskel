@@ -1,0 +1,14 @@
+name: pyskel
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python==3.12
+  # for performance improvements the following packages are installed via conda
+  - numba==0.59.1
+  - numpy==1.26.4
+  - libopenblas==0.3.27
+  # remaining dependencies are managed via requirements.in and pip-compile
+  - pip
+  - pip:
+      - pip-tools

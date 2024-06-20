@@ -1,3 +1,31 @@
+## Overall setup
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PySkel"
+version = "1.0"
+authors = [{ name = "David Rudlstorfer" }]
+maintainers = [{ name = "David Rudlstorfer" }]
+description = "A quick start Python skeleton with many amenities"
+readme = "README.md"
+license = {file = "LICENSE.md"}
+keywords = ["Skeleton", "Documentation", "CICD", "Testing", "Pre-Commit"]
+classifiers = ["Programming Language :: Python :: 3.12"]
+
+requires-python = "==3.12.*"
+dynamic = ["dependencies"]
+
+[tool.setuptools.packages.find]
+include = ["pyskel.*", "pyskel"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+## Tools
+
 [tool.bandit]
 exclude_dirs = [
     ".git",
@@ -6,6 +34,10 @@ exclude_dirs = [
 
 [tool.black]
 line-length = 79
+
+[tool.coverage.run]
+omit = ["tests/*"]
+relative_files = true
 
 [tool.interrogate]
 style="google"
