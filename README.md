@@ -12,11 +12,11 @@
 
 PySkel is a quick-start Python repository to act as a skeleton for various projects which includes the following amenities:
 
-- Testing framework [PyTest](https://docs.pytest.org/) including an enforced minimum coverage check
+- [PyTest](https://docs.pytest.org/) testing framework including an enforced minimum coverage check
 - Automated [Github CI/CD](https://resources.github.com/devops/ci-cd/)
 - Exhaustive [Pre-Commit](https://pre-commit.com) framework to automatically check code formatting and code quality
 - Automatically generated [Documentation](https://pdoc.dev) based on the included Python docstrings
-- Pre-defined framework to gather global settings (see [`main_example_config.yaml`](./main_example_config.yaml)) and execute a specific workflow
+- Pre-defined framework to gather global settings (see [`main_example_config.yaml`](./src/pyskel/main_example_config.yaml)) and execute a specific workflow
 - Adjusted global logger with optional output to the commandline and/or log file
 
 ## Installation
@@ -49,13 +49,13 @@ Now you are up and running 🎉
 To execute PySkel either run
 
 ```
-python main.py
+pyskel
 ````
 
 to execute PySkel with the provided exemplary config or use
 
 ```
-python main.py --config_file_path ../path/to/config.yaml
+pyskel --config_file_path ../path/to/config.yaml
 ````
 
 to utilize your own externally provided config file. Therein, all necessary configurations can be found.
@@ -73,8 +73,24 @@ pytest
 To locally create the documentation from the provided docstrings simply run
 
 ```
-pdoc --html --output-dir docs .
+pdoc --html --output-dir docs src/
 ```
+
+## Dependency Management
+
+To ease the dependency update process [`pip-tools`](https://github.com/jazzband/pip-tools) is utilized. To create the necessary [`requirements.txt`](./requirements.txt) file simply execute
+
+```
+pip-compile --all-extras --output-file=requirements.txt requirements.in
+````
+
+To upgrade the dependencies simply execute
+
+```
+pip-compile --all-extras --output-file=requirements.txt --upgrade requirements.in
+````
+
+Finally, perforfmance critical packages such as Numpy and Numba are installed via conda to utilize BLAS libraries.
 
 ## Contributing
 

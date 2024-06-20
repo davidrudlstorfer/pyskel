@@ -1,6 +1,6 @@
 """Test example."""
 
-from pyskel.example import exemplary_function
+from pyskel.core.example import exemplary_function
 
 
 def test_exemplary_function():

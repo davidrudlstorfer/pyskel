@@ -19,10 +19,14 @@ requires-python = "==3.12.*"
 dynamic = ["dependencies"]
 
 [tool.setuptools.packages.find]
-include = ["pyskel.*", "pyskel"]
+where = ["src"]
+include = ["pyskel", "utilities"]
 
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.txt"] }
+
+[project.scripts]
+pyskel = "pyskel.main:main"
 
 ## Tools
 
@@ -36,11 +40,7 @@ exclude_dirs = [
 line-length = 79
 
 [tool.coverage.run]
-omit = ["tests/*"]
 relative_files = true
-
-[tool.interrogate]
-style="google"
 
 [tool.isort]
 profile = "black"
@@ -49,4 +49,4 @@ src_paths = ["."]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-p pytest_cov --cov-report=term --cov-report=html --cov-fail-under=90 --cov=. --cov-append"
+addopts = "-p pytest_cov --cov-report=term --cov-report=html --cov-fail-under=90 --cov=src/ --cov-append"
