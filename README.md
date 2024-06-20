@@ -24,9 +24,9 @@ PySkel is a quick-start Python repository to act as a skeleton for various proje
 For a quick and easy start an Anaconda/Miniconda environment is highly recommended. Other ways to install PySkel are possible but here the installation procedure is explained based on a conda install. After installing Anaconda/Miniconda
 execute the following steps:
 
-- Create a new Anaconda environment using Python 3.12:
+- Create a new Anaconda environment based on the [`environment.yml`](./environment.yml) file:
 ```
-conda create -n pyskel python=3.12
+conda env create -f environment.yml
 ```
 
 - Activate your newly created environment:
@@ -35,7 +35,7 @@ conda activate pyskel
 ```
 - All necessary third party libraries can be installed using:
 ```
-pip install .
+pip install -e .
 ```
 - Finally, install the pre-commit hook with:
 ```
