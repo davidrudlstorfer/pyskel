@@ -4,7 +4,7 @@ from unittest.mock import MagicMock, patch
 
 from munch import munchify
 
-from pyskel.run import run_pyskel
+from pyskel.core.run import run_pyskel
 
 
 def test_run_pyskel():
@@ -13,10 +13,12 @@ def test_run_pyskel():
     mock_config = munchify({"key": "value"})
     # mock runner
     mock_run_manager = MagicMock()
-    with patch("pyskel.run.RunManager", return_value=mock_run_manager):
+    with patch("pyskel.core.run.RunManager", return_value=mock_run_manager):
         # Mock exemplary_function
         mock_exemplary_function = MagicMock(return_value="Exemplary output")
-        with patch("pyskel.run.exemplary_function", mock_exemplary_function):
+        with patch(
+            "pyskel.core.run.exemplary_function", mock_exemplary_function
+        ):
             # Call run_pyskel with mock configuration
             run_pyskel(mock_config)
 

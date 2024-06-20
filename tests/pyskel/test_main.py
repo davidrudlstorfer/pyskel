@@ -7,7 +7,7 @@ import pytest
 import yaml
 from munch import munchify
 
-from main import main
+from pyskel.main import main
 
 
 def test_main_config_file_exists(tmp_path: Path):
@@ -34,7 +34,7 @@ def test_main_config_file_exists(tmp_path: Path):
             with patch("yaml.safe_load", return_value=mock_config_data):
                 # Mock run_pyskel to capture the config argument
                 mock_run_pyskel = MagicMock()
-                with patch("main.run_pyskel", mock_run_pyskel):
+                with patch("pyskel.main.run_pyskel", mock_run_pyskel):
                     # Run main function
                     main()
 

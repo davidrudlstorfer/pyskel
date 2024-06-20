@@ -6,7 +6,7 @@ import os
 import yaml
 from munch import munchify
 
-from pyskel.run import run_pyskel
+from pyskel.core.run import run_pyskel
 
 
 def main():
@@ -21,7 +21,7 @@ def main():
         "-cfp",
         help="Path to config file.",
         type=str,
-        default="main_example_config.yaml",
+        default="src/pyskel/main_example_config.yaml",
     )
     args = parser.parse_args()
 

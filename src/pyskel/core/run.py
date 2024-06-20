@@ -3,8 +3,8 @@
 import logging
 from typing import Any
 
-from pyskel.example import exemplary_function
-from pyskel.utilities import RunManager
+from pyskel.core.example import exemplary_function
+from pyskel.core.utilities import RunManager
 
 log = logging.getLogger("pyskel")
 

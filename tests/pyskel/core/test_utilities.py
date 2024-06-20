@@ -2,7 +2,7 @@
 
 from unittest.mock import MagicMock, patch
 
-from pyskel.utilities import RunManager
+from pyskel.core.utilities import RunManager
 
 
 def test_run_manager_init_run():
@@ -12,9 +12,9 @@ def test_run_manager_init_run():
 
     # Mock setup_logging, log_full_width, and logging.getLogger
     with (
-        patch("pyskel.utilities.setup_logging") as mock_setup_logging,
-        patch("pyskel.utilities.log_full_width") as mock_log_full_width,
-        patch("pyskel.utilities.print_header") as mock_print_header,
+        patch("pyskel.core.utilities.setup_logging") as mock_setup_logging,
+        patch("pyskel.core.utilities.log_full_width") as mock_log_full_width,
+        patch("pyskel.core.utilities.print_header") as mock_print_header,
     ):
         # Create an instance of RunManager
         run_manager = RunManager(mock_config)
@@ -35,8 +35,8 @@ def test_run_manager_finish_run():
 
     # Mock log_full_width, logging handlers, and logging.getLogger
     with (
-        patch("pyskel.utilities.log_full_width") as mock_log_full_width,
-        patch("pyskel.utilities.log") as mock_log,
+        patch("pyskel.core.utilities.log_full_width") as mock_log_full_width,
+        patch("pyskel.core.utilities.log") as mock_log,
     ):
 
         # Create an instance of RunManager
