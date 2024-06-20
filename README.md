@@ -2,17 +2,18 @@
 
 [Full report](https://htmlpreview.github.io/?https://github.com/davidrudlstorfer/pyskel/blob/python-coverage-comment-action-data/htmlcov/index.html)
 
-| Name                          |    Stmts |     Miss |   Cover |   Missing |
-|------------------------------ | -------: | -------: | ------: | --------: |
-| main.py                       |       14 |        0 |    100% |           |
-| pyskel/\_\_init\_\_.py        |        0 |        0 |    100% |           |
-| pyskel/example.py             |        2 |        0 |    100% |           |
-| pyskel/run.py                 |       10 |        0 |    100% |           |
-| pyskel/utilities.py           |       20 |        2 |     90% |     36-37 |
-| utilities/\_\_init\_\_.py     |        0 |        0 |    100% |           |
-| utilities/log/\_\_init\_\_.py |        0 |        0 |    100% |           |
-| utilities/log/logger.py       |       39 |        0 |    100% |           |
-|                     **TOTAL** |   **85** |    **2** | **98%** |           |
+| Name                              |    Stmts |     Miss |   Cover |   Missing |
+|---------------------------------- | -------: | -------: | ------: | --------: |
+| src/pyskel/\_\_init\_\_.py        |        0 |        0 |    100% |           |
+| src/pyskel/core/\_\_init\_\_.py   |        0 |        0 |    100% |           |
+| src/pyskel/core/example.py        |        2 |        0 |    100% |           |
+| src/pyskel/core/run.py            |       10 |        0 |    100% |           |
+| src/pyskel/core/utilities.py      |       20 |        2 |     90% |     36-37 |
+| src/pyskel/main.py                |       14 |        0 |    100% |           |
+| src/utilities/\_\_init\_\_.py     |        0 |        0 |    100% |           |
+| src/utilities/log/\_\_init\_\_.py |        0 |        0 |    100% |           |
+| src/utilities/log/logger.py       |       39 |        0 |    100% |           |
+|                         **TOTAL** |   **85** |    **2** | **98%** |           |
 
 
 ## Setup coverage badge
