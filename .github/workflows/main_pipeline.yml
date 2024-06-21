@@ -22,7 +22,7 @@ jobs:
           pip install -e .
           pre-commit install --install-hooks
       - name: Run pre-commit on all files
-        run: pre-commit run --all-files
+        run: SKIP=no-commit-to-branch pre-commit run --all-files
   tests:
     name: Run test suite and create coverage badge
     runs-on: ubuntu-latest
