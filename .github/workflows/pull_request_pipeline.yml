@@ -20,9 +20,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Set up submodules
+        run: git submodule update --init --recursive
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          git submodule foreach --recursive pip install -e .
           pip install -e .
           pre-commit install --install-hooks
       - name: Run pre-commit on all files
@@ -34,13 +37,18 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          submodules: True
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Set up submodules
+        run: git submodule update --init --recursive
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          git submodule foreach --recursive pip install -e .
           pip install -e .
       - name: Run tests
         run: pytest
@@ -56,16 +64,21 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          submodules: True
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Set up submodules
+        run: git submodule update --init --recursive
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
+          git submodule foreach --recursive pip install -e .
           pip install -e .
-      - name: Generate docs
-        run: pdoc --html --output-dir docs src/
+      - name: Generate documentation
+        run: pdoc --html --output-dir docs src/pyskel
       - name: Upload documentation artifact
         uses: actions/upload-pages-artifact@v3
         with:

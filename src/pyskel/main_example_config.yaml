@@ -1,4 +1,5 @@
-general_config:
+general:
   output_directory: output
+  sim_name: test_sim
   log_file: pyskel.log
   log_to_console: true
