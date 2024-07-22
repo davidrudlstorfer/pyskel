@@ -5,11 +5,10 @@ import os
 
 import yaml
 from munch import munchify
-
 from pyskel.core.run import run_pyskel
 
 
-def main():
+def main() -> None:
     """Call PySkel runner with config.
 
     Raises:

@@ -20,7 +20,7 @@ dynamic = ["dependencies"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["pyskel", "utilities"]
+include = ["pyskel"]
 
 [tool.setuptools.dynamic]
 dependencies = { file = ["requirements.txt"] }
@@ -45,8 +45,9 @@ relative_files = true
 [tool.isort]
 profile = "black"
 line_length = 79
-src_paths = ["."]
+filter_files = true
+src_paths = ["src/pyskel/", "tests/"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-p pytest_cov --cov-report=term --cov-report=html --cov-fail-under=90 --cov=src/ --cov-append"
+addopts = "-p pytest_cov --cov-report=term --cov-report=html --cov-fail-under=90 --cov=src/pyskel/ --cov-append"

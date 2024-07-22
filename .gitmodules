@@ -1,0 +1,3 @@
+[submodule "src/pytoda"]
+	path = src/pytoda
+	url = git@github.com:davidrudlstorfer/pytoda.git

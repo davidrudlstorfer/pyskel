@@ -20,18 +20,19 @@ repos:
     rev: 1.7.9
     hooks:
       - id: bandit
-        args: ["-c", "pyproject.toml", "-r", "-ll", "."]
+        args: ["-c", "pyproject.toml", "-r", "-ll", "src/pyskel/", "tests/"]
         additional_dependencies: ["bandit[toml]"]
   - repo: https://github.com/psf/black
     rev: 24.4.2
     hooks:
       - id: black
         language_version: python3.12
+        args: ["--line-length=79"]
   - repo: https://github.com/PyCQA/docformatter
     rev: v1.7.5
     hooks:
       - id: docformatter
-        args: ["--in-place", "--config=./pyproject.toml", "-r"]
+        args: ["--in-place", "--config=./pyproject.toml", "-r", "src/pyskel/", "tests/"]
   - repo: https://github.com/kplaube/pre-commit-dodgy
     rev: 0.0.2
     hooks:
@@ -44,17 +45,17 @@ repos:
     rev: 1.7.0
     hooks:
       - id: interrogate
-        args: [--fail-under=100, --ignore-init-module, --style=google, -vv, src]
+        args: [--fail-under=100, --ignore-init-module, --style=google, -vv, src/pyskel/, tests/]
   - repo: https://github.com/pycqa/isort
     rev: 5.13.2
     hooks:
       - id: isort
-        args: ["--profile", "black", "--line-length", "79", "--filter-files"]
+        args: ["--profile", "black", "--line-length", "79", "--filter-files", "--src", "[src/pyskel/, tests/]"]
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.10.0
     hooks:
       - id: mypy
-        args: ["--install-types", "--non-interactive", "--ignore-missing-imports"]
+        args: ["--install-types", "--non-interactive", "--ignore-missing-imports", "--exclude=src/pytoda/*", "--follow-imports=silent"]
   - repo: https://github.com/asmeurer/removestar
     rev: "1.5"
     hooks:
@@ -63,7 +64,7 @@ repos:
     rev: v0.2.6
     hooks:
       - id: xml-formatter
-        args: [--indent, "2", --indent-char, " ", --selfclose, --overwrite]
+        args: [--indent, "2", --indent-char, " ", --selfclose, --overwrite, --eof-newline]
   - repo: https://github.com/google/yamlfmt
     rev: v0.12.1
     hooks:
