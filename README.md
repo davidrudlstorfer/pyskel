@@ -40,6 +40,7 @@ To setup a project based on PySkel simply follow these steps:
 3. Rename all occurrences of PySkel to your new code project's name.
 4. Within your GitHub project's settings, enable GitHub Pages for GitHub Actions (`Settings` -> `Pages` -> `Source` = `GitHub Actions`).
 5. Create a new branch protection rule for the main branch on GitHub (`Settings` -> `Branches` -> `Add rule` -> Set up your rules`).
+6. Activate to automatically delete branches after merging (`Settings` -> `General` -> `Automatically delete head branches`)
 
 ## Installation
 
