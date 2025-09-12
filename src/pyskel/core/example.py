@@ -5,10 +5,10 @@ def exemplary_function(a: float, b: float) -> float:
     """Returns the product from a*b.
 
     Args:
-        a (float): value a
-        b (float): value b
+        a: value a
+        b: value b
 
     Returns:
-        float: product of a * b
+        Product of a * b
     """
     return a * b

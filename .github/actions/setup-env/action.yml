@@ -1,0 +1,25 @@
+name: "Set up Conda environment and install package"
+description: "Create Conda env from environment.yml and install package with extras"
+runs:
+  using: "composite"
+  steps:
+    - name: Set up submodules
+      shell: bash -el {0}
+      run: git submodule update --init --recursive
+
+    - name: Set up Conda environment from environment.yml
+      uses: conda-incubator/setup-miniconda@v3
+      with:
+        environment-file: environment.yml
+        auto-update-conda: true
+        activate-environment: pygebege
+
+    - name: Install editable package with extras
+      shell: bash -el {0}
+      run: |
+        git submodule foreach --recursive pip install -e .
+        pip install -e ."[safe]"
+
+    - name: Show environment
+      shell: bash -el {0}
+      run: conda list

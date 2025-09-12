@@ -1,0 +1,18 @@
+name: "Run pre-commit"
+description: "Run pre-commit hooks on all files"
+runs:
+  using: "composite"
+  steps:
+    - name: Install pre-commit if missing
+      shell: bash -el {0}
+      run: pre-commit install
+
+    - name: Run pre-commit on all files
+      shell: bash -el {0}
+      run: |
+        if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
+          echo "Skipping 'no-commit-to-branch' hook on main branch"
+          SKIP=no-commit-to-branch pre-commit run --all-files
+        else
+          pre-commit run --all-files
+        fi

@@ -2,10 +2,20 @@
 
 import argparse
 import os
+import sys
 
 import yaml
 from munch import munchify
+
 from pyskel.core.run import run_pyskel
+
+
+def run_example() -> None:
+    """Run PySkel with example config file."""
+
+    sys.argv.extend(["--config_file_path", "src/pyskel/configs/config_example.yaml"])
+
+    main()
 
 
 def main() -> None:
@@ -20,14 +30,12 @@ def main() -> None:
         "-cfp",
         help="Path to config file.",
         type=str,
-        default="src/pyskel/main_example_config.yaml",
+        required=True,
     )
     args = parser.parse_args()
 
     if not os.path.isfile(args.config_file_path):
-        raise RuntimeError(
-            "Config file not found! PySkel can not be executed!"
-        )
+        raise RuntimeError("Config file not found! PySkel can not be executed!")
 
     # load config and convert to simple namespace for easier access
     with open(args.config_file_path, "r") as file:
@@ -38,6 +46,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":  # pragma: no cover
-
     main()
     exit(0)

@@ -1,0 +1,23 @@
+name: "Run tests"
+description: "Run pytest with coverage and generate HTML report"
+runs:
+  using: "composite"
+  steps:
+    - name: Run tests with coverage
+      shell: bash -el {0}
+      run: |
+        pytest
+
+    - name: Upload HTML coverage report
+      # do this prior to creating the coverage badge (it deletes the htmlcov/ folder)
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage_report
+        path: htmlcov/
+
+    - name: Create coverage badge on dedicated branch and add comment to PR
+      id: coverage_comment
+      uses: py-cov-action/python-coverage-comment-action@v3.37
+      with:
+        MINIMUM_GREEN: 90
+        GITHUB_TOKEN: ${{ github.token }}

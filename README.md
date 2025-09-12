@@ -4,9 +4,9 @@
 
 <div align="center">
 
-[![Pipeline](https://github.com/davidrudlstorfer/pyskel/actions/workflows/main_pipeline.yml/badge.svg)](https://github.com/davidrudlstorfer/pyskel/actions/workflows/main_pipeline.yml)
-[![Documentation](https://github.com/davidrudlstorfer/pyskel/actions/workflows/main_documentation.yml/badge.svg)](https://davidrudlstorfer.github.io/pyskel/)
-[![Coverage badge](https://github.com/davidrudlstorfer/pyskel/raw/python-coverage-comment-action-data/badge.svg)](https://github.com/davidrudlstorfer/pyskel/tree/python-coverage-comment-action-data)
+[![CI Workflow](https://github.com/davidrudlstorfer/pyskel/actions/workflows/ci.yml/badge.svg)](https://github.com/davidrudlstorfer/pyskel/actions/workflows/ci.yml)
+[![Documentation](https://raw.githubusercontent.com/davidrudlstorfer/pyske/refs/heads/main/assets/badges/documentation.svg)](https://davidrudlstorfer.github.io/pyskel/)
+[![Coverage badge](https://github.com/davidrudlstorfer/pyskel/raw/python-coverage-comment-action-data/badge.svg)](https://htmlpreview.github.io/?https://github.com/davidrudlstorfer/pyskel/blob/python-coverage-comment-action-data/htmlcov/index.html)
 
 </div>
 
@@ -16,7 +16,7 @@ PySkel (**Py**thon **Skel**eton) is a quick-start Python repository to act as a 
 - Automated [Github CI/CD](https://resources.github.com/devops/ci-cd/)
 - Exhaustive [Pre-Commit](https://pre-commit.com) framework to automatically check code formatting and code quality
 - Automatically generated [Documentation](https://pdoc.dev) based on the included Python docstrings
-- Pre-defined framework to gather global settings (see [`main_example_config.yaml`](./src/pyskel/main_example_config.yaml)) and execute a specific workflow
+- Pre-defined framework to gather global settings (see [`config_example.yaml`](./src/pyskel/configs/config_example.yaml)) and execute a specific workflow
 
 The remaining parts of the readme are structured as follows:
 
@@ -39,7 +39,7 @@ To setup a project based on PySkel simply follow these steps:
 2. Clone your new repository to your local machine and setup the project according to the installation procedure down below.
 3. Rename all occurrences of PySkel to your new code project's name.
 4. Within your GitHub project's settings, enable GitHub Pages for GitHub Actions (`Settings` -> `Pages` -> `Source` = `GitHub Actions`).
-5. Create a new branch protection rule for the main branch on GitHub (`Settings` -> `Branches` -> `Add rule` -> Set up your rules`).
+5. Create a new branch protection rule for the main branch on GitHub (`Settings` -> `Branches` -> `Add rule` -> `Set up your rules`).
 6. Activate to automatically delete branches after merging (`Settings` -> `General` -> `Automatically delete head branches`)
 
 ## Installation
@@ -67,17 +67,16 @@ git submodule update --init --recursive
 git submodule --quiet foreach --recursive pip install -e .
 ```
 
-- Install all PySkel requirements with:
+- Install all PySkel requirements (latest versions) with:
 ```
 pip install -e .
 ```
-
-- Finally, install the pre-commit hook with:
+or install the pinned versions with
 ```
-pre-commit install
+pip install -e ."[safe]"
 ```
 
-Now you are up and running 🎉
+- Now you are up and running 🎉
 
 ## Execution
 
@@ -86,14 +85,14 @@ Now you are up and running 🎉
 To execute PySkel either run
 
 ```
-pyskel
-````
+pyskel-example
+```
 
 to execute PySkel with the provided exemplary config or use
 
 ```
 pyskel --config_file_path ../path/to/config.yaml
-````
+```
 
 to utilize your own externally provided config file. Therein, all necessary configurations can be found.
 
@@ -119,13 +118,13 @@ To ease the dependency update process [`pip-tools`](https://github.com/jazzband/
 
 ```
 pip-compile --all-extras --output-file=requirements.txt requirements.in
-````
+```
 
 To upgrade the dependencies simply execute
 
 ```
 pip-compile --all-extras --output-file=requirements.txt --upgrade requirements.in
-````
+```
 
 Finally, perforfmance critical packages such as Numpy and Numba are installed via conda to utilize BLAS libraries.
 

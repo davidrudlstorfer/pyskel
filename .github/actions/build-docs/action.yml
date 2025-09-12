@@ -1,0 +1,14 @@
+name: "Build documentation"
+description: "Generate HTML documentation using pdoc"
+runs:
+  using: "composite"
+  steps:
+    - name: Generate HTML documentation
+      shell: bash -el {0}
+      run: pdoc --html --output-dir docs src/pyskel
+
+    - name: Upload documentation artifact
+      uses: actions/upload-pages-artifact@v4
+      with:
+        name: documentation
+        path: docs/

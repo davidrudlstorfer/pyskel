@@ -3,8 +3,10 @@
 import logging
 import os
 import time
+from typing import Any
 
 import yaml
+
 from pytoda.logger import log_full_width, print_header, setup_logging
 
 log = logging.getLogger("pyskel")
@@ -13,8 +15,7 @@ log = logging.getLogger("pyskel")
 class RunManager:
     """Helper functions to manage a PySkel run."""
 
-    def __init__(self, config):
-
+    def __init__(self, config: Any) -> None:
         self.config = config
 
     def init_run(self) -> None:
@@ -75,7 +76,11 @@ class RunManager:
 
     def finish_run(self, start_time: float) -> None:
         """Finish run and close all loggers (Important if module is used within
-        other modules including a Python Logger!)"""
+        other modules including a Python Logger!)
+
+        Args:
+            start_time: time when run started
+        """
 
         log_full_width()
         log.info(f"Run took {time.time() - start_time} s.")
