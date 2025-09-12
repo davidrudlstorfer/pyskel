@@ -8,9 +8,9 @@
 | src/pyskel/core/\_\_init\_\_.py |        0 |        0 |    100% |           |
 | src/pyskel/core/example.py      |        2 |        0 |    100% |           |
 | src/pyskel/core/run.py          |       12 |        0 |    100% |           |
-| src/pyskel/core/utilities.py    |       32 |        2 |     94% |     87-88 |
-| src/pyskel/main.py              |       14 |        0 |    100% |           |
-|                       **TOTAL** |   **60** |    **2** | **97%** |           |
+| src/pyskel/core/utilities.py    |       33 |        2 |     94% |     92-93 |
+| src/pyskel/main.py              |       18 |        0 |    100% |           |
+|                       **TOTAL** |   **65** |    **2** | **97%** |           |
 
 
 ## Setup coverage badge
