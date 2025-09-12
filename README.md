@@ -5,7 +5,7 @@
 <div align="center">
 
 [![CI Workflow](https://github.com/davidrudlstorfer/pyskel/actions/workflows/ci.yml/badge.svg)](https://github.com/davidrudlstorfer/pyskel/actions/workflows/ci.yml)
-[![Documentation](https://raw.githubusercontent.com/davidrudlstorfer/pyske/refs/heads/main/assets/badges/documentation.svg)](https://davidrudlstorfer.github.io/pyskel/)
+[![Documentation](https://raw.githubusercontent.com/davidrudlstorfer/pyskel/refs/heads/main/assets/badges/documentation.svg)](https://davidrudlstorfer.github.io/pyskel/)
 [![Coverage badge](https://github.com/davidrudlstorfer/pyskel/raw/python-coverage-comment-action-data/badge.svg)](https://htmlpreview.github.io/?https://github.com/davidrudlstorfer/pyskel/blob/python-coverage-comment-action-data/htmlcov/index.html)
 
 </div>
