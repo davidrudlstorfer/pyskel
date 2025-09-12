@@ -13,9 +13,9 @@ description = "A quick start Python skeleton with many amenities"
 readme = "README.md"
 license = {file = "LICENSE.md"}
 keywords = ["Skeleton", "Documentation", "CICD", "Testing", "Pre-Commit"]
-classifiers = ["Programming Language :: Python :: 3.12"]
+classifiers = ["Programming Language :: Python :: 3.13"]
 
-requires-python = "==3.12.*"
+requires-python = ">=3.9"
 dynamic = ["dependencies"]
 
 [tool.setuptools.packages.find]
@@ -23,31 +23,21 @@ where = ["src"]
 include = ["pyskel"]
 
 [tool.setuptools.dynamic]
-dependencies = { file = ["requirements.txt"] }
+dependencies = { file = ["requirements.in"] }
+
+[tool.setuptools.dynamic.optional-dependencies]
+safe = {file = ["requirements.txt"]}
 
 [project.scripts]
 pyskel = "pyskel.main:main"
+pyskel-example = "pyskel.main:run_example"
 
 ## Tools
 
-[tool.bandit]
-exclude_dirs = [
-    ".git",
-    "__pycache__",
-]
-
-[tool.black]
-line-length = 79
-
+# necessary for the coverage badge
 [tool.coverage.run]
 relative_files = true
 
-[tool.isort]
-profile = "black"
-line_length = 79
-filter_files = true
-src_paths = ["src/pyskel/", "tests/"]
-
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-p pytest_cov --cov-report=term --cov-report=html --cov-fail-under=90 --cov=src/pyskel/ --cov-append"
+addopts = "-p pytest_cov --cov-report=term --cov-report=html --cov-fail-under=90 --cov=src/pyskel"

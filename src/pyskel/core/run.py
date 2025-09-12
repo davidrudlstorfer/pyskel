@@ -14,7 +14,7 @@ def run_pyskel(config: Any) -> None:
     """General run procedure of PySkel.
 
     Args:
-        config (Any): Munch type object containing all configs for current
+        config: Munch type object containing all configs for current
         run. Config options can be called via attribute-style access.
     """
 

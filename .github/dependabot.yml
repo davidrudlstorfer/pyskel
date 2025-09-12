@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # note: currently the pre-commit config and requirements.txt are not updated automatically by dependabot => currently not possible
+  - package-ecosystem: github-actions
+    directories:
+      - "/.github/workflows"
+      - "/.github/actions/**/*"
+    schedule:
+      interval: weekly

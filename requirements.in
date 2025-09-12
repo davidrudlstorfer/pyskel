@@ -1,12 +1,7 @@
 # This file contains all the requirements for PySkel
-
-# dependencies from conda environment.yml
-numba==0.59.1
-numpy==1.26.4
-
-# remaining requirements
-isort
 munch
+numba
+numpy
 pdoc3
 pre-commit
 pyfiglet

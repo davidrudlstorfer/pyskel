@@ -7,6 +7,7 @@ from unittest.mock import MagicMock, patch
 
 import yaml
 from munch import munchify
+
 from pyskel.core.utilities import RunManager
 
 
@@ -19,9 +20,7 @@ def test_run_manager_init_run() -> None:
         patch("pyskel.core.utilities.setup_logging") as mock_setup_logging,
         patch("pyskel.core.utilities.print_header") as mock_print_header,
         patch("pyskel.core.utilities.log_full_width") as mock_log_full_width,
-        patch(
-            "pyskel.core.utilities.RunManager.write_config"
-        ) as mock_write_config,
+        patch("pyskel.core.utilities.RunManager.write_config") as mock_write_config,
     ):
         run_manager = RunManager(mock_config)
 
@@ -90,7 +89,6 @@ def test_run_manager_finish_run() -> None:
         patch("pyskel.core.utilities.log_full_width") as mock_log_full_width,
         patch("pyskel.core.utilities.log") as mock_log,
     ):
-
         run_manager = RunManager(mock_config)
 
         run_manager.finish_run(start_time=time.time())
