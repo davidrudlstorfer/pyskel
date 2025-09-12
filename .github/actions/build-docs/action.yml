@@ -5,7 +5,7 @@ runs:
   steps:
     - name: Generate HTML documentation
       shell: bash -el {0}
-      run: pdoc --html --output-dir docs src/pyskel
+      run: pdoc --docformat google --output-dir docs src/pyskel/
 
     - name: Upload documentation artifact
       uses: actions/upload-pages-artifact@v4

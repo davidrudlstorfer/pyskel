@@ -2,7 +2,7 @@
 munch
 numba
 numpy
-pdoc3
+pdoc
 pre-commit
 pyfiglet
 pytest-cov
