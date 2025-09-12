@@ -11,4 +11,4 @@ runs:
       uses: actions/upload-pages-artifact@v4
       with:
         name: documentation
-        path: docs/
+        path: docs/pyskel
