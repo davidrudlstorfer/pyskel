@@ -10,7 +10,7 @@
 | src/pyskel/core/run.py          |       12 |        0 |    100% |           |
 | src/pyskel/core/utilities.py    |       33 |        2 |     94% |     92-93 |
 | src/pyskel/main.py              |       18 |        0 |    100% |           |
-|                       **TOTAL** |   **65** |    **2** | **97%** |           |
+| **TOTAL**                       |   **65** |    **2** | **97%** |           |
 
 
 ## Setup coverage badge
