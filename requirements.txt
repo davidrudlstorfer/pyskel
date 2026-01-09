@@ -4,47 +4,49 @@
 #
 #    pip-compile --all-extras --output-file=requirements.txt requirements.in
 #
-cfgv==3.4.0
+cfgv==3.5.0
     # via pre-commit
-coverage[toml]==7.10.6
+coverage[toml]==7.13.1
     # via pytest-cov
 distlib==0.4.0
     # via virtualenv
-filelock==3.19.1
+filelock==3.20.2
     # via virtualenv
-identify==2.6.14
+identify==2.6.15
     # via pre-commit
-iniconfig==2.1.0
+iniconfig==2.3.0
     # via pytest
 jinja2==3.1.6
     # via pdoc
-llvmlite==0.44.0
+llvmlite==0.46.0
     # via numba
-markupsafe==3.0.2
+markdown2==2.5.4
+    # via pdoc
+markupsafe==3.0.3
     # via
     #   jinja2
     #   pdoc
 munch==4.0.0
     # via -r requirements.in
-nodeenv==1.9.1
+nodeenv==1.10.0
     # via pre-commit
-numba==0.61.2
+numba==0.63.1
     # via -r requirements.in
-numpy==2.2.6
+numpy==2.3.5
     # via
     #   -r requirements.in
     #   numba
 packaging==25.0
     # via pytest
-pdoc==15.0.4
+pdoc==16.0.0
     # via -r requirements.in
-platformdirs==4.4.0
+platformdirs==4.5.1
     # via virtualenv
 pluggy==1.6.0
     # via
     #   pytest
     #   pytest-cov
-pre-commit==4.3.0
+pre-commit==4.5.1
     # via -r requirements.in
 pyfiglet==1.0.4
     # via -r requirements.in
@@ -52,13 +54,13 @@ pygments==2.19.2
     # via
     #   pdoc
     #   pytest
-pytest==8.4.2
+pytest==9.0.2
     # via pytest-cov
 pytest-cov==7.0.0
     # via -r requirements.in
-pyyaml==6.0.2
+pyyaml==6.0.3
     # via
     #   -r requirements.in
     #   pre-commit
-virtualenv==20.34.0
+virtualenv==20.36.0
     # via pre-commit
