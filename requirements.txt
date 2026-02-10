@@ -6,13 +6,13 @@
 #
 cfgv==3.5.0
     # via pre-commit
-coverage[toml]==7.13.1
+coverage[toml]==7.13.4
     # via pytest-cov
 distlib==0.4.0
     # via virtualenv
-filelock==3.20.2
+filelock==3.20.3
     # via virtualenv
-identify==2.6.15
+identify==2.6.16
     # via pre-commit
 iniconfig==2.3.0
     # via pytest
@@ -36,7 +36,7 @@ numpy==2.3.5
     # via
     #   -r requirements.in
     #   numba
-packaging==25.0
+packaging==26.0
     # via pytest
 pdoc==16.0.0
     # via -r requirements.in
@@ -62,5 +62,5 @@ pyyaml==6.0.3
     # via
     #   -r requirements.in
     #   pre-commit
-virtualenv==20.36.0
+virtualenv==20.36.1
     # via pre-commit
