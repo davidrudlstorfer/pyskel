@@ -6,15 +6,15 @@
 #
 cfgv==3.5.0
     # via pre-commit
-coverage[toml]==7.13.5
+coverage[toml]==7.14.1
     # via pytest-cov
-distlib==0.4.0
+distlib==0.4.3
     # via virtualenv
-filelock==3.25.2
+filelock==3.29.4
     # via
     #   python-discovery
     #   virtualenv
-identify==2.6.18
+identify==2.6.19
     # via pre-commit
 iniconfig==2.3.0
     # via pytest
@@ -32,17 +32,17 @@ munch==4.0.0
     # via -r requirements.in
 nodeenv==1.10.0
     # via pre-commit
-numba==0.65.0
+numba==0.65.1
     # via -r requirements.in
-numpy==2.4.4
+numpy==2.4.6
     # via
     #   -r requirements.in
     #   numba
-packaging==26.0
+packaging==26.2
     # via pytest
 pdoc==16.0.0
     # via -r requirements.in
-platformdirs==4.9.6
+platformdirs==4.10.0
     # via
     #   python-discovery
     #   virtualenv
@@ -50,7 +50,7 @@ pluggy==1.6.0
     # via
     #   pytest
     #   pytest-cov
-pre-commit==4.5.1
+pre-commit==4.6.0
     # via -r requirements.in
 pyfiglet==1.0.4
     # via -r requirements.in
@@ -58,15 +58,15 @@ pygments==2.20.0
     # via
     #   pdoc
     #   pytest
-pytest==9.0.3
+pytest==9.1.0
     # via pytest-cov
 pytest-cov==7.1.0
     # via -r requirements.in
-python-discovery==1.2.2
+python-discovery==1.4.2
     # via virtualenv
 pyyaml==6.0.3
     # via
     #   -r requirements.in
     #   pre-commit
-virtualenv==21.2.1
+virtualenv==21.5.1
     # via pre-commit
