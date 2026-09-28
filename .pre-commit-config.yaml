@@ -61,17 +61,12 @@ repos:
         name: Run mypy (static type checker for python)
         args: ["--install-types", "--non-interactive", "--ignore-missing-imports", "--disallow-untyped-defs", "--disallow-incomplete-defs", "--disallow-untyped-calls", "--check-untyped-defs", "--disallow-untyped-decorators"]
         exclude: "tests/"
-  - repo: https://github.com/asmeurer/removestar
-    rev: "1.5.2"
-    hooks:
-      - id: removestar
-        name: Run removestar (remove wildcard imports)
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.12.12
     hooks:
       - id: ruff # linter
         name: Run ruff (linter for Python)
-        args: ["--fix", "--select", "I,TID252,F401"] # "I => sort imports, TID252 => ban relative imports, F401 => unused imports"
+        args: ["--fix", "--select", "I,TID252,F401,F403"] # I => sort imports, TID252 => ban relative imports, F401 => unused imports, F403 => no wildcard imports
       - id: ruff-format # formatter
         name: Run ruff (formatter for Python)
   - repo: https://github.com/crate-ci/typos
